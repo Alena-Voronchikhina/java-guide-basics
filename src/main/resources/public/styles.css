@@ -1,15 +1,15 @@
 :root {
-  --bg: #f2f3f5;
-  --card: #ffffff;
-  --text: #1f2937;
-  --muted: #475569;
-  --primary: #1f5fbf;
-  --heading: #0a5ea8;
+  --bg: #05070c;
+  --card: #0b0f14;
+  --text: #d1fae5;
+  --muted: #86efac;
+  --primary: #22c55e;
+  --heading: #4ade80;
   --intro-accent: #7a3ea1;
-  --accent: #f9fafb;
-  --code-hardcoded: #eaf2ff;
-  --code-input: #fff8e1;
-  --warn: #fee2e2;
+  --accent: #111827;
+  --code-hardcoded: #0e1f14;
+  --code-input: #1f1b0e;
+  --warn: #2a1212;
 }
 
 * {
@@ -18,7 +18,8 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -38,9 +39,10 @@ body {
 }
 
 header {
-  background: #0f2f5f;
+  background: #020617;
   color: white;
-  border-bottom: 4px solid #f47f20;
+  border-bottom: 2px solid #22c55e;
+  box-shadow: 0 0 24px rgb(34 197 94 / 22%);
 }
 
 .header-inner {
@@ -63,6 +65,7 @@ h1 {
   font-size: 1.8rem;
   line-height: 2;
   text-align: center;
+  letter-spacing: 0.03em;
 }
 
 h2 {
@@ -119,8 +122,8 @@ h3::after,
 .menu a,
 .button {
   display: inline-block;
-  background: white;
-  border: 1px solid #dbe1ea;
+  background: var(--card);
+  border: 1px solid #334155;
   color: var(--text);
   text-decoration: none;
   padding: 14px;
@@ -146,42 +149,44 @@ h3::after,
   white-space: pre;
   overflow-x: auto;
   tab-size: 4;
-  border: 1px solid #c5d6f5;
-  border-left: 4px solid #3b82f6;
+  border: 1px solid #14532d;
+  border-left: 4px solid #22c55e;
   border-radius: 6px;
   width: min(100%, 88ch);
   padding: 12px 14px;
   margin: 12px auto;
+  color: #d1fae5;
+  box-shadow: inset 0 0 0 1px rgb(34 197 94 / 10%);
 }
 
 .code-keyword {
-  color: #0033b3;
+  color: #4ade80;
   font-weight: 600;
 }
 
 .code-type {
-  color: #267f99;
+  color: #34d399;
 }
 
 .code-string {
-  color: #067d17;
+  color: #bbf7d0;
 }
 
 .code-number {
-  color: #1750eb;
+  color: #fef08a;
 }
 
 .code-comment {
-  color: #8c8c8c;
+  color: #9ca3af;
   font-style: italic;
 }
 
 .code-method {
-  color: #00627a;
+  color: #6ee7b7;
 }
 
 .code-annotation {
-  color: #808000;
+  color: #67e8f9;
 }
 
 .hardcoded {
@@ -211,9 +216,11 @@ select {
   width: 100%;
   padding: 10px;
   margin-top: 6px;
-  border: 1px solid #cdd6e1;
+  border: 1px solid #334155;
   border-radius: 6px;
   font: inherit;
+  background: #0f172a;
+  color: var(--text);
 }
 
 textarea {
@@ -255,8 +262,8 @@ button {
 }
 
 .guide-menu-line {
-  background: #ffffff;
-  border-bottom: 1px solid #dbe1ea;
+  background: #030712;
+  border-bottom: 1px solid #14532d;
 }
 
 .guide-menu-inner {
@@ -271,7 +278,7 @@ button {
 
 .guide-menu-inner a {
   text-decoration: none;
-  color: #1f5fbf;
+  color: #86efac;
   font-weight: 600;
   font-size: 0.92rem;
 }
@@ -281,12 +288,12 @@ button {
 }
 
 .guide-menu-inner a.active {
-  color: var(--heading);
+  color: #4ade80;
   text-decoration: underline;
 }
 
 .intro-box {
-  background: rgb(122 62 161 / 16%);
+  background: rgb(16 185 129 / 18%);
   border: 0;
   border-radius: 12px;
   padding: 12px 16px;
@@ -298,7 +305,7 @@ button {
 }
 
 .intro-guide-title {
-  color: #111827;
+  color: #ecfdf5;
   margin: 0 0 8px;
   line-height: 1.6;
   text-align: center;
@@ -311,8 +318,36 @@ button {
 }
 
 .intro-guide-line {
-  color: #111827;
+  color: #ecfdf5;
   font-weight: 700;
+}
+
+.output-box {
+  width: min(100%, 88ch);
+  margin: -4px auto 14px;
+  border: 1px solid #14532d;
+  border-left: 4px solid #22c55e;
+  border-radius: 6px;
+  background: #020617;
+  box-shadow: inset 0 0 0 1px rgb(34 197 94 / 8%);
+}
+
+.output-label {
+  padding: 6px 10px;
+  border-bottom: 1px solid #14532d;
+  color: #86efac;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.output-content {
+  margin: 0;
+  padding: 10px;
+  color: #d1fae5;
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .section-title {

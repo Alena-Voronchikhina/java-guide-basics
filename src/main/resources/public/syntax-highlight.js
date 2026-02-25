@@ -66,9 +66,66 @@ function highlightJava(code) {
   return html;
 }
 
+function extractOutput(code) {
+  const lines = code.split("\n");
+  const outputLines = [];
+
+  lines.forEach((line) => {
+    const outputMatch = line.match(/\/\/\s*Outputs?\s*:\s*(.*)$/i);
+    if (outputMatch) {
+      const text = outputMatch[1].trim();
+      if (text) {
+        outputLines.push(text);
+      }
+      return;
+    }
+
+    const itemMatch = line.match(/\/\/\s*(?:=>|->)\s*(.*)$/);
+    if (itemMatch) {
+      const text = itemMatch[1].trim();
+      if (text) {
+        outputLines.push(text);
+      }
+    }
+  });
+
+  if (outputLines.length > 0) {
+    return outputLines.join("\n");
+  }
+
+  if (/System\.out\.(?:print|println|printf)\(/.test(code)) {
+    return "Output depends on current values and user input.";
+  }
+
+  return "No console output in this snippet.";
+}
+
+function addOutputPanel(block, outputText) {
+  const next = block.nextElementSibling;
+  if (next && next.classList.contains("output-box")) {
+    next.remove();
+  }
+
+  const outputBox = document.createElement("div");
+  outputBox.className = "output-box";
+
+  const outputLabel = document.createElement("div");
+  outputLabel.className = "output-label";
+  outputLabel.textContent = "Output";
+
+  const outputContent = document.createElement("pre");
+  outputContent.className = "output-content";
+  outputContent.textContent = outputText;
+
+  outputBox.append(outputLabel, outputContent);
+  block.insertAdjacentElement("afterend", outputBox);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const codeBlocks = document.querySelectorAll(".code-box");
   codeBlocks.forEach((block) => {
-    block.innerHTML = highlightJava(block.textContent || "");
+    const rawCode = block.textContent || "";
+    block.innerHTML = highlightJava(rawCode);
+    addOutputPanel(block, extractOutput(rawCode));
   });
 });
