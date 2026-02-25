@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arrays — Processing Lists of Data</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Arrays — Processing Lists of Data</h1>
+    </div>
+  </header>
+
+  <nav class="guide-menu-line">
+    <div class="guide-menu-inner">
+      <a href="/index.html">Start</a>
+      <a href="/variables.html">Variables</a>
+      <a href="/conditionals.html">Conditionals</a>
+      <a href="/loops.html">Loops</a>
+      <a class="active" href="/arrays.html">Arrays</a>
+      <a href="/arrays-2d.html">2D Arrays</a>
+      <a href="/java-rules.html">Important Rules</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>What Arrays Let Java Do</h2>
+      <ul>
+        <li>Store many values of the same type in one variable.</li>
+        <li>Loop through values to calculate totals, average, max, and min.</li>
+        <li>Update values by index and process data in order.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Hardcoded Array</h2>
+      <div class="code-box hardcoded">int[] scores = {88, 92, 76, 95, 84};
+
+System.out.println(scores[0]); // first item
+System.out.println(scores[4]); // last item</div>
+    </section>
+
+    <section class="card">
+      <h2>Array with User Input</h2>
+      <div class="code-box input">import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+int[] values = new int[5];
+
+for (int i = 0; i < values.length; i++) {
+    System.out.print("Enter value " + (i + 1) + ": ");
+    values[i] = sc.nextInt();
+}</div>
+    </section>
+
+    <section class="card">
+      <h2>Process an Array (Sum and Average)</h2>
+      <div class="code-box input">int sum = 0;
+for (int i = 0; i < values.length; i++) {
+    sum += values[i];
+}
+
+double avg = (double) sum / values.length;
+System.out.println("Sum = " + sum);
+System.out.println("Average = " + avg);</div>
+    </section>
+
+    <section class="card">
+      <h2>Common Mistakes</h2>
+      <div class="code-box warning">// Index out of bounds (wrong)
+int x = values[values.length];
+
+// Correct last index
+int last = values[values.length - 1];
+
+// Arrays keep fixed size after creation</div>
+    </section>
+  </main>
+
+  <script src="/syntax-highlight.js"></script>
+</body>
+</html>

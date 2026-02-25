@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug Java Guide App",
+      "request": "launch",
+      "mainClass": "com.javaguide.App",
+      "projectName": "java-guide-basics",
+      "preLaunchTask": "Compile Java Guide App"
+    }
+  ]
+}

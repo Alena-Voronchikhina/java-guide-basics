@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Compile Java Guide App",
+			"type": "shell",
+			"command": "./mvnw",
+			"args": [
+				"compile"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Run Java Guide Web App",
+			"type": "shell",
+			"command": "./mvnw",
+			"args": [
+				"compile",
+				"exec:java"
+			],
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2D Arrays — Tables in Java</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>2D Arrays — Tables in Java</h1>
+    </div>
+  </header>
+
+  <nav class="guide-menu-line">
+    <div class="guide-menu-inner">
+      <a href="/index.html">Start</a>
+      <a href="/variables.html">Variables</a>
+      <a href="/conditionals.html">Conditionals</a>
+      <a href="/loops.html">Loops</a>
+      <a href="/arrays.html">Arrays</a>
+      <a class="active" href="/arrays-2d.html">2D Arrays</a>
+      <a href="/java-rules.html">Important Rules</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>What Intro Java Can Do with 2D Arrays</h2>
+      <ul>
+        <li>Store rows and columns of values (like a table or grid).</li>
+        <li>Loop through all cells to compute totals and averages.</li>
+        <li>Useful for grade books, seats, and small game boards.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Hardcoded 2D Array</h2>
+      <div class="code-box hardcoded">int[][] grades = {
+    {90, 85, 88},
+    {76, 92, 81},
+    {100, 95, 98}
+};
+
+System.out.println(grades[0][1]); // row 0, col 1 => 85
+System.out.println(grades[2][2]); // row 2, col 2 => 98</div>
+    </section>
+
+    <section class="card">
+      <h2>User Input into 2D Array</h2>
+      <div class="code-box input">import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+int[][] table = new int[2][3];
+
+for (int row = 0; row < table.length; row++) {
+    for (int col = 0; col < table[row].length; col++) {
+        System.out.print("Enter value for [" + row + "][" + col + "]: ");
+        table[row][col] = sc.nextInt();
+    }
+}</div>
+    </section>
+
+    <section class="card">
+      <h2>Process All Values (Sum + Average)</h2>
+      <div class="code-box input">int sum = 0;
+int count = 0;
+
+for (int row = 0; row < table.length; row++) {
+    for (int col = 0; col < table[row].length; col++) {
+        sum += table[row][col];
+        count++;
+    }
+}
+
+double average = (double) sum / count;
+System.out.println("Sum = " + sum);
+System.out.println("Average = " + average);</div>
+    </section>
+
+    <section class="card">
+      <h2>Common Mistakes</h2>
+      <div class="code-box warning">// Wrong: using row length for all rows
+  // when arrays can be jagged
+for (int col = 0; col < table.length; col++) {
+    // ...
+}
+
+// Correct
+for (int col = 0; col < table[row].length; col++) {
+    // ...
+}</div>
+    </section>
+  </main>
+
+  <script src="/syntax-highlight.js"></script>
+</body>
+</html>

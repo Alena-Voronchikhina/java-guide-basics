@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Basics Guide - Startup</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <p class="project-name">Java Guide Basics</p>
+      <h1>Start</h1>
+    </div>
+  </header>
+
+  <nav class="guide-menu-line">
+    <div class="guide-menu-inner">
+      <a class="active" href="/index.html">Start</a>
+      <a href="/variables.html">Variables</a>
+      <a href="/conditionals.html">Conditionals</a>
+      <a href="/loops.html">Loops</a>
+      <a href="/arrays.html">Arrays</a>
+      <a href="/arrays-2d.html">2D Arrays</a>
+      <a href="/java-rules.html">Important Rules</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="intro-box">
+      <h2 class="intro-guide-title">How to read this guide:</h2>
+      <span class="intro-guide-line">
+        📌 Blue code boxes = hardcoded values (you set them in code).
+      </span>
+      <br />
+      <span class="intro-guide-line">
+        📌 Yellow code boxes = user provides values (via Scanner).
+      </span>
+      <br />
+      <span class="intro-guide-line">
+        📌 Every program you write in class will use one or the other.
+        Learn both.
+      </span>
+    </div>
+    <h2 class="section-title">The Skeleton — Every Program Starts Here</h2>
+    <div class="code-box hardcoded">public class MyProgram {
+    public static void main(String[] args) {
+        // your code goes here
+    }
+}</div>
+
+    <ul>
+      <li>File name MUST match class name: <strong>MyProgram.java</strong></li>
+      <li>Every statement ends with <strong>;</strong></li>
+      <li>
+        Java is case-sensitive: <strong>String</strong> is not
+        <strong>string</strong>
+      </li>
+    </ul>
+
+    <h2 class="section-title">Getting User Input — The Setup</h2>
+    <div class="code-box input">import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    }
+}</div>
+
+    <h2 class="section-title">How to Read Different Types</h2>
+    <div class="code-box input">int age = sc.nextInt();
+double price = sc.nextDouble();
+String word = sc.next();
+String line = sc.nextLine();</div>
+
+    <div class="code-box warning">THE SCANNER TRAP:
+After nextInt() or nextDouble(), Enter stays in buffer.
+If you call nextLine() right after, you may get empty text.
+
+int num = sc.nextInt();
+sc.nextLine(); // eat leftover Enter
+String name = sc.nextLine();</div>
+  </main>
+  <script src="/syntax-highlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditionals</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Conditionals — Making Decisions</h1>
+    </div>
+  </header>
+
+  <nav class="guide-menu-line">
+    <div class="guide-menu-inner">
+      <a href="/index.html">Start</a>
+      <a href="/variables.html">Variables</a>
+      <a class="active" href="/conditionals.html">Conditionals</a>
+      <a href="/loops.html">Loops</a>
+      <a href="/arrays.html">Arrays</a>
+      <a href="/arrays-2d.html">2D Arrays</a>
+      <a href="/java-rules.html">Important Rules</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>With Hardcoded Values</h2>
+      <div class="code-box hardcoded">int score = 85;
+
+if (score >= 90) {
+    System.out.println("A");
+} else if (score >= 80) {
+    System.out.println("B");
+} else if (score >= 70) {
+    System.out.println("C");
+} else {
+    System.out.println("F");
+}</div>
+    </section>
+
+    <section class="card">
+      <h2>With User Input</h2>
+      <div class="code-box input">System.out.print("Enter your score: ");
+int score = sc.nextInt();
+
+if (score >= 90) {
+    System.out.println("A");
+} else if (score >= 80) {
+    System.out.println("B");
+} else if (score >= 70) {
+    System.out.println("C");
+} else {
+    System.out.println("F");
+}</div>
+    </section>
+
+    <section class="card">
+      <h2>Other Conditional Forms</h2>
+      <div class="code-box hardcoded">String result = (score >= 60)
+    ? "Pass"
+    : "Fail";
+
+System.out.print("Enter day: ");
+String day = sc.nextLine();
+
+switch (day) {
+    case "Monday":
+        System.out.println("Start of week");
+        break;
+    case "Friday":
+        System.out.println("Almost weekend");
+        break;
+    default:
+        System.out.println("Regular day");
+}</div>
+
+      <div class="code-box warning">String comparison: NEVER use == for Strings.
+    Always use .equals().
+
+if (name == "Alena") // wrong
+if (name.equals("Alena")) // correct</div>
+    </section>
+  </main>
+  <script src="/syntax-highlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loops</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Loops — Repeating Things</h1>
+    </div>
+  </header>
+
+  <nav class="guide-menu-line">
+    <div class="guide-menu-inner">
+      <a href="/index.html">Start</a>
+      <a href="/variables.html">Variables</a>
+      <a href="/conditionals.html">Conditionals</a>
+      <a class="active" href="/loops.html">Loops</a>
+      <a href="/arrays.html">Arrays</a>
+      <a href="/arrays-2d.html">2D Arrays</a>
+      <a href="/java-rules.html">Important Rules</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>FOR Loop — When You Know How Many Times</h2>
+      <div class="code-box hardcoded">for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}</div>
+      <div class="code-box input">System.out.print("How many times? ");
+int n = sc.nextInt();
+
+for (int i = 1; i <= n; i++) {
+    System.out.println("Iteration " + i);
+}</div>
+    </section>
+
+    <section class="card">
+      <h2>WHILE Loop — When You Don't Know How Many Times</h2>
+      <div class="code-box hardcoded">int count = 10;
+while (count > 0) {
+    System.out.println(count);
+    count--;
+}
+System.out.println("Liftoff!");</div>
+
+      <div class="code-box input">int num;
+System.out.print("Enter a positive number: ");
+num = sc.nextInt();
+
+while (num < 0) {
+    System.out.print("Invalid! Try again: ");
+    num = sc.nextInt();
+}
+System.out.println("You entered: " + num);</div>
+    </section>
+
+    <section class="card">
+      <h2>DO-WHILE Loop — Runs At Least Once</h2>
+      <div class="code-box input">int num;
+do {
+    System.out.print("Enter a positive number: ");
+    num = sc.nextInt();
+} while (num <= 0);</div>
+      <div class="code-box hardcoded">break;    // exit loop immediately
+continue; // skip rest of current iteration</div>
+    </section>
+
+    <section class="card">
+      <h2>Full Example: Sum Until User Enters 0</h2>
+      <div class="code-box input">import java.util.Scanner;
+
+public class SumUntilZero {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        int num;
+
+        System.out.println("Enter numbers (0 to stop):");
+        num = sc.nextInt();
+
+        while (num != 0) {
+            sum += num;
+            num = sc.nextInt();
+        }
+
+        System.out.println("Total: " + sum);
+    }
+}</div>
+    </section>
+  </main>
+  <script src="/syntax-highlight.js"></script>
+</body>
+</html>
